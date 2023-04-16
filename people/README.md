@@ -45,33 +45,33 @@ bilibili
 1. 下載代碼
 
     ```
-    D:\> git clone https://github.com/dyh/win10_yolov5_deepsort_counting.git
+    D:\> git clone https://github.com/tady0725/People_Counting_System
     ```
    
-   > 因此repo包含weights和mp4文件，若 git clone 速度慢，可直接下載zip文件：https://github.com/dyh/win10_yolov5_deepsort_counting/archive/refs/heads/main.zip
+   > 因此repo包含weights和mp4文件
    
 2. 進入目錄
 
     ```
-    D:\> cd win10_yolov5_deepsort_counting
+    D:\> cd people
     ```
 
 3. 創建 python 虛擬環境
 
     ```
-    D:\win10_yolov5_deepsort_counting> python -m venv venv
+    D:\people> python -m venv venv
     ```
 
 4. 激活虛擬環境
 
     ```
-     D:\win10_yolov5_deepsort_counting> venv\Scripts\activate
+     D:\people> venv\Scripts\activate
     ```
    
 5. 升級pip
 
     ```
-     (venv) D:\win10_yolov5_deepsort_counting> python -m pip install --upgrade pip
+     (venv) D:\people> python -m pip install --upgrade pip
     ```
 
 6. 安裝pytorch
@@ -79,18 +79,18 @@ bilibili
     > 根據你的操作系統、虛擬環境以及CUDA版本，在 https://pytorch.org/get-started/locally/ 找到對應的安裝命令。我的環境是 win10、pip、CUDA 11.6。
    
     ```
-     (venv) D:\win10_yolov5_deepsort_counting> pip3 install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+     (venv) D:\people> pip3 install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
     ```
    
 7. 安裝軟件包
    
     ```
-     (venv) D:\win10_yolov5_deepsort_counting> pip3 install -r requirements.txt
+     (venv) D:\people> pip3 install -r requirements.txt
     ```
    
 8. 在 main.py 文件中第66行，設置要檢測的視頻文件路徑，默認為 './video/test.mp4'
    
-    > 140MB的測試視頻可以在這裡下載：https://pan.baidu.com/s/1qHNGGpX1QD6zHyNTqWvg1w 提取碼: 8ufq 
+  
    
     ```
     capture = cv2.VideoCapture(r'video\test.mp4')
@@ -99,7 +99,7 @@ bilibili
 9. 運行程序
 
     ```
-    (venv) D:\win10_yolov5_deepsort_counting> python main.py
+    (venv) D:\people> python main.py
     ```
 
 
