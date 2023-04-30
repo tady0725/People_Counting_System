@@ -2,7 +2,7 @@
 
 ##  win10 運行
 
-- 更新到 python 3.9.10，請不要安裝更高版本。
+- 更新到 python 3.8.6，請不要安裝更高版本。
 - 更新到 yolov5 v6.1版。使用的權重文件可以在此下載：https://github.com/ultralytics/yolov5/releases/tag/v6.1
 - 更新到 CUDA 11.2+
 - 建議保留 Arial.ttf 文件，或在首次運行時由 yolov5 自動下載。
