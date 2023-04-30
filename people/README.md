@@ -1,10 +1,10 @@
-# win10版本 yolov5 deepsort 行人 車輛 跟踪 檢測 計數
+# win10版本 yolov5 deepsort 
 
-## 應B站上同學們要求在 win10 運行
+##  win10 運行
 
 - 更新到 python 3.9.10，請不要安裝更高版本。
 - 更新到 yolov5 v6.1版。使用的權重文件可以在此下載：https://github.com/ultralytics/yolov5/releases/tag/v6.1
-- 更新到 CUDA 11.3+
+- 更新到 CUDA 11.2+
 - 建議保留 Arial.ttf 文件，或在首次運行時由 yolov5 自動下載。
 
 
@@ -15,12 +15,6 @@
 - 默認檢測類別：行人、自行車、小汽車、摩托車、公交車、卡車。
 - 檢測類別可在 detector.py 文件第60行修改。
 
-
-### 視頻
-
-bilibili
-
-[![bilibili](https://raw.githubusercontent.com/dyh/win10_yolov5_deepsort_counting/main/cover.png)](https://www.bilibili.com/video/BV13Z4y1C7Dt/ "bilibili")
 
 
 ## 運行環境
