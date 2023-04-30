@@ -36,16 +36,12 @@ from connect_DB import *
 #     send_voice.runAndWait()
 
 
-# 變數設置
 up = False
 h = False
 one_up = 0
 one_down = 0
 status = conection_DB()
-#======================================================================
-
-
-# 主程式
+# dic = 'C:\\Users\\user\\Desktop\\win10_yolov5_deepsort_counting\\imgs'
 if __name__ == '__main__':
 
     # 根据视频尺寸，填充一个polygon，供撞线计算使用
@@ -105,47 +101,14 @@ if __name__ == '__main__':
 
     # 初始化 yolov5
     detector = Detector()
-    
-    
 
-    #(480, 640, 3) 
-    
-    ''' python socket connection '''
-    #=====================================================================================================
-    # Client socket
-    # create an INET, STREAMing socket : 
-    client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    # 設定IP 
-    host_ip ='192.168.226.175'
-    #對應開啟port 連線通道
-    port = 10059
-    # Port to listen on (non-privileged ports are > 1023)
-    # now connect to the web server on the specified port number
-    client_socket.connect((host_ip,port)) 
-    #'b' or 'B'produces an instance of the bytes type instead of the str type
-    #used in handling binary data from network connections
-    data = b""
-    # Q: unsigned long long integer(8 bytes)
-    payload_size = struct.calcsize("Q")
+
+    capture = cv2.VideoCapture(1)
 
     while True:
-        # time1 = time.time()
-        while len(data) < payload_size:
-            packet = client_socket.recv(4*1024)
-            if not packet: 
-                break
-            data+=packet
-        packed_msg_size = data[:payload_size]
-        data = data[payload_size:]
-        msg_size = struct.unpack("Q",packed_msg_size)[0]
-        while len(data) < msg_size:
-            data += client_socket.recv(4*1024)
-        frame_data = data[:msg_size]
-        data  = data[msg_size:]
-        frame = pickle.loads(frame_data)
-        key = cv2.waitKey(10) 
-    #=====================================================================================================
-        
+
+
+    
 
         # 時間戳記
         s = datetime.datetime.now()
@@ -158,8 +121,8 @@ if __name__ == '__main__':
         # 46
         
         
-    #資料傳回資料庫
-    # ===========================================================================================================================
+        #資料傳回資料庫
+        # ===========================================================================================================================
         
         # # 五分鐘上傳DB
         
@@ -191,16 +154,8 @@ if __name__ == '__main__':
         # ===========================================================================================================================
         
         
-        
-        # 設定終止 cv按鍵
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-        
-
-        
         # 每幀數
-        im = frame
+        _, im = capture.read()
         if im is None:
             break
 
@@ -295,7 +250,9 @@ if __name__ == '__main__':
                         # os.chdir(dic)
                         current_time = datetime.datetime.now()
                         print(current_time)
-
+                        # print(current_time+'/'+str(track_id))
+                        # c=str(current_time).split(' ')
+                        # t=c[1].split('.')
 
                         # filename = str(track_id)+'.jpg'
                         # cv2.imwrite(filename, im)

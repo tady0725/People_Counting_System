@@ -16,7 +16,7 @@ def conection_DB():
         # 連接 MySQL/MariaDB 資料庫
         connection = mysql.connector.connect(
             host='localhost',          # 主機名稱
-            database='ai_center', # 資料庫名稱
+            database='system', # 資料庫名稱
             user='root',        # 帳號
             password='')  # 密碼
 
