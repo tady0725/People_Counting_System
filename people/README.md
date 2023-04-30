@@ -19,7 +19,7 @@
 
 ## 運行環境
 
-- python 3.9.10，pip 22.0.3+
+- python 3.8.6，pip 22.0.3+
 - pytorch 1.10.2+
 - pip3 install -r requirements.txt
 
